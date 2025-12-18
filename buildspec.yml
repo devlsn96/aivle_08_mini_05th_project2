@@ -4,22 +4,14 @@ phases:
   install:
     runtime-versions:
       java: corretto17
-      nodejs: 20
     commands:
-      - npm install -g @angular/cli@17
-
-  pre_build:
-    commands:
-      - npm install
+      - chmod +x ./gradlew
 
   build:
     commands:
-      - ng build -c production
-      - echo "Build completed."
-    finally:
-      - echo "This is the finally block execution!"
+      - ./gradlew clean build
+      - echo "Java build completed"
 
 artifacts:
-  base-directory: dist/my-angular-project
   files:
-    - '**/*'
+    - build/libs/*.jar
