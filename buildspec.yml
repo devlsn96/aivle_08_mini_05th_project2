@@ -9,7 +9,8 @@ phases:
 
   build:
     commands:
-      - ./gradlew clean build
+      - ./gradlew clean
+      - ./gradlew build
       - echo "Java build completed"
 
 artifacts:
