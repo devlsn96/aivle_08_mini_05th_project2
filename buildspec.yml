@@ -6,7 +6,7 @@ phases:
       java: corretto17
     commands:
       - chmod +x ./gradlew
-
+      - sed -i 's/\r$//' gradlew
   build:
     commands:
       - ./gradlew clean
